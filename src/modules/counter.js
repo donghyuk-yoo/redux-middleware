@@ -2,7 +2,7 @@ import { createAction, handleActions } from "redux-actions";
 
 // 액션 타입
 const INCREASE = "counter/INCREASE";
-const DECREASE = "coutner/DECREASE";
+const DECREASE = "counter/DECREASE";
 
 // 액션 생성 함수
 // 1. 기본
