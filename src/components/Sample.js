@@ -7,7 +7,7 @@ const Sample = ({ loadingPost, loadingUsers, post, users }) => {
         <h1>포스트</h1>
         {loadingPost && "로딩 중..."}
         {/* 요청 성공 */}
-        {!loadingPose && post && (
+        {!loadingPost && post && (
           <div>
             {/* API를 통해 전달받은 post 데이터 중 title과 body만 보여 줌 */}
             <h3>{post.title}</h3>
@@ -20,12 +20,12 @@ const Sample = ({ loadingPost, loadingUsers, post, users }) => {
         <h1>유저</h1>
         {loadingUsers && "로딩 중..."}
         {/* 유효성 검사 */}
-        {!loadingUsers && user && (
+        {!loadingUsers && users && (
           <ul>
             {users.map((user) => (
               // map 함수 key값 필요
               <li key={user.id}>
-                {users.username} ({users.email})
+                {user.username} ({user.email})
               </li>
             ))}
           </ul>
