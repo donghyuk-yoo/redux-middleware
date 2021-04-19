@@ -13,6 +13,19 @@ export const increase = () => ({
 // 2. createAction
 export const decrease = createAction(DECREASE);
 
+//Thunk 생성 함수, 일반 액션 객체가 아닌 함수 반환
+export const increaseAsync = () => (dispatch) => {
+  setTimeout(() => {
+    dispatch(increase());
+  }, 1000);
+};
+
+export const decreaseAsync = () => (dispatch) => {
+  setTimeout(() => {
+    dispatch(decrease());
+  }, 1000);
+};
+
 // 초기 상태
 const initialState = 0;
 
