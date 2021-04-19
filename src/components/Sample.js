@@ -19,6 +19,7 @@ const Sample = ({ loadingPost, loadingUsers, post, users }) => {
       <section>
         <h1>유저</h1>
         {loadingUsers && "로딩 중..."}
+        {/* 유효성 검사 */}
         {!loadingUsers && user && (
           <ul>
             {users.map((user) => (
