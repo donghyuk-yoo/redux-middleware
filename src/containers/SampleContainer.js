@@ -18,8 +18,8 @@ export default connect(
   (state) => ({
     post: state.sample.post,
     users: state.sample.users,
-    loadingPost: state.sample.loading.GET_POST,
-    loadingUsers: state.sample.loading.GET_USERS,
+    loadingPost: state.loading["sample/GET_POST"],
+    loadingUsers: state.loading["sample/GET_USERS"],
   }),
   {
     getPost,
