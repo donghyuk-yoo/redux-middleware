@@ -8,8 +8,16 @@ const SampleContainer = ({ getPost, getUsers, post, users, loadingPost, loadingU
   // 클래스 형태 컴포넌트 였다면 componentDidMount
   // 컴포넌트 마운트된 후 실행 useEffect
   useEffect(() => {
-    getPost(1);
-    getUsers(1);
+    // useEffect에 파라미터로 넣는 함수는 async로 할 수 없기에 내부에서 선언 후 호출
+    const fn = async () => {
+      try {
+        getPost(1);
+        getUsers(1);
+      } catch (e) {
+        console.log(e); // 에러조회
+      }
+    };
+    fn();
   }, [getPost, getUsers]);
   return <Sample post={post} users={users} loadingPost={loadingPost} loadingUsers={loadingUsers} />;
 };
